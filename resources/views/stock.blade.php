@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <div>
+        <h1>Stock</h1>
+    </div>
     <div class="p-2">
         <table class="table">
             <thead>

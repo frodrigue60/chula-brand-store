@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/products', function (){
+    return view('products.index');
+})->name('products.index');
+
+Route::get('/products/new', function (){
+    return view('products.create');
+})->name('products.create');
+
 Route::get('/movement/new', function () {
     return view('movements.new');
 })->name('movement.new');
