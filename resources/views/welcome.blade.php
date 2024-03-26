@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <div class="d-flex gap-2">
-            <a href="{{ route('movement.new') }}" class="btn btn-success w-100">Nuevo movimiento</a>
+            <a href="{{ route('movements.create') }}" class="btn btn-success w-100">Nuevo movimiento</a>
             {{-- <a href="{{route('movement.out')}}" class="btn btn-danger w-100">Salida</a> --}}
         </div>
         <div class="card my-2">

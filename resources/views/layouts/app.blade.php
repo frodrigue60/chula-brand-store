@@ -43,6 +43,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('products.index')}}">Inventario</a>
                         </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="{{route('movements.index')}}">Movimientos</a>
+                        </li> --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Movimientos
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Entradas</a></li>
+                              <li><a class="dropdown-item" href="#">Salidas</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Devoluciones</a></li>
+                            </ul>
+                          </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

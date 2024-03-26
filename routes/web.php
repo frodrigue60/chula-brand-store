@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductController as ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +19,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', function (){
-    return view('products.index');
-})->name('products.index');
+Route::prefix('products')->group(function () {
 
-Route::get('/products/new', function (){
-    return view('products.create');
-})->name('products.create');
+    Route::get('index', [ProductController::class, 'index'])->name('products.index');
 
-Route::get('/movement/new', function () {
-    return view('movements.new');
-})->name('movement.new');
+    Route::get('create', function () {
+        return view('products.create');
+    })->name('products.create');
+
+    Route::post('store', [ProductController::class, 'store'])->name('products.store');
+
+});
+
+Route::prefix('movements')->group(function () {
+
+    Route::get('create', function () {
+        return view('movements.create');
+    })->name('movements.create');
+
+    Route::get('index', function () {
+        return view('movements.index');
+    })->name('movements.index');
+
+});
 
 Auth::routes();
 
